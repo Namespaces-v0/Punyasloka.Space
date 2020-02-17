@@ -11,16 +11,33 @@ pool:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: "Restore Dependencies"
   inputs:
     command: 'restore'
     projects: '**/*.csproj'
     feedsToUse: 'select'
+
 - task: DotNetCoreCLI@2
+  displayName: "Build Project"
   inputs:
     command: 'build'
 
-- task: DotNetCoreCLI@2
+- task: CopyFiles@2
   inputs:
-    command: 'pack'
-    packagesToPack: '**/*.csproj'
-    versioningScheme: 'off'
+    sourceFolder: '$(Build.SourcesDirectory)\bin\Debug\netstandard2.1\dist'
+    contents: '**' 
+    targetFolder: '$(Build.ArtifactsStagingDirectory)\DeploymentFiles'
+    cleanTargetFolder: true
+
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: '$(Build.SourcesDirectory)\wwwroot'
+    contents: '**' 
+    targetFolder: '$(Build.ArtifactsStagingDirectory)\DeploymentFiles'
+    cleanTargetFolder: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactsStagingDirectory)\DeploymentFiles' 
+    artifactName: 'BlazorSPA' 
+
