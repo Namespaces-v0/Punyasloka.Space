@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap");
+body {
+  font-family: "PT Sans", sans-serif;
+  max-width: 100vw;
+  margin: 0;
+}
+
 #blazor-error-ui {
   background: lightyellow;
   bottom: 0;
@@ -15,6 +22,34 @@
   position: absolute;
   right: 0.75rem;
   top: 0.5rem;
+}
+
+#site-header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: #242424;
+  color: #cccccc;
+}
+#site-header .navigation-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 30%;
+  margin: 0;
+  padding: 0;
+}
+#site-header .navigation-bar .navigation-bar-link {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#site-header .navigation-bar .navigation-bar-link a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /*# sourceMappingURL=evaporate.css.map */
