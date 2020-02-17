@@ -27,14 +27,12 @@ steps:
     sourceFolder: '$(Build.SourcesDirectory)\bin\Debug\netstandard2.1\dist'
     contents: '**' 
     targetFolder: '$(Build.ArtifactsStagingDirectory)\DeploymentFiles'
-    cleanTargetFolder: true
 
 - task: CopyFiles@2
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)\wwwroot'
     contents: '**' 
     targetFolder: '$(Build.ArtifactsStagingDirectory)\DeploymentFiles'
-    cleanTargetFolder: true
 
 - task: PublishBuildArtifacts@1
   inputs:
