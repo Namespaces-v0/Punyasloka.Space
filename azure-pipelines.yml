@@ -27,6 +27,7 @@ steps:
     sourceFolder: '$(Build.SourcesDirectory)\bin\Debug\netstandard2.1\dist'
     contents: '**' 
     targetFolder: '$(Build.ArtifactsStagingDirectory)\DeploymentFiles'
+    cleanTargetFolder: true
 
 - task: CopyFiles@2
   inputs:
