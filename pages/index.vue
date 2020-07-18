@@ -1,8 +1,11 @@
 <template>
   <div class="container">
-        <h1 class="title">
+  
+  <div id="hero-page-a"></div>
+  <div id="hero-page-b">     <h1 class="title">
        Punyasloka
-      </h1>
+      </h1></div>
+   
   </div>
 </template>
 
@@ -15,6 +18,7 @@ export default {}
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -34,7 +38,7 @@ export default {}
     sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 3em;
   color: #35495e;
   letter-spacing: 1px;
 }
@@ -49,5 +53,14 @@ export default {}
 
 .links {
   padding-top: 15px;
+}
+#hero-page-a {
+  width: 100%;
+height: 30vh;
+background: #F9F9F8;
+}
+#hero-page-b {
+  width: 100%;
+  height: 70vh;
 }
 </style>
